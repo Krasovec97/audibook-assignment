@@ -11,3 +11,31 @@
     content:" *";
     color:red;
 }
+
+@media only screen and (max-width: 600px) {
+    .col-5 {
+        width: 80%;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .display-6 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .col-5 {
+        width: 80%;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .display-6 {
+        font-size: 24px;
+    }
+}
