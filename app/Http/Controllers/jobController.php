@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\JobApplication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class jobController extends Controller
 {
@@ -37,11 +38,6 @@ class jobController extends Controller
     public function store(Request $request)
     {
         try {
-            // Parse Date for SQL
-            $dateOfBirth = strtotime($request->date_of_birth);
-            $sqlFormat = date('Y-m-d', $dateOfBirth);
-
-
             // Validate form
             $request->validate([
                 'full_name' => 'required|string',
@@ -56,29 +52,56 @@ class jobController extends Controller
                 'full_name' => $request->full_name,
                 'gender' => $request->gender,
                 'email' => $request->email,
-                'date_of_birth' => $sqlFormat,
+                'date_of_birth' => $this->dateParse($request),
                 'link' => $request->link
             ]);
 
             // Return success response
-            return response()->json([
-                'Code' => 200,
-                'Message' => 'OK'
+            $succesResponse = response()->json([
+                'code' => 200,
+                'message' => 'OK'
             ]);
+            $this->logRequest($request, $succesResponse);
+            return $succesResponse;
         }
         catch (\Throwable $error)
         {
             $message = $error->getMessage();
 
             // Return error message
-            return response()->json([
-                'Code' => 400,
-                'Error' => $message
+            $badResponse = response()->json([
+                'code' => 400,
+                'error' => $message
             ]);
+            $this->logRequest($request, $badResponse);
+            return $badResponse;
         }
+    }
 
+    private function logRequest(Request $request, $response) {
+        //Log the Request
+        $generateDate = now()->format('Ymd');
 
+        Log::build([
+            'driver' => 'single',
+            'path' => base_path('logs/requests_' . $generateDate . '.log'),
+            'level' => 'info',
+        ])->info('New request:', [
+            $response->content(),
+            $request->full_name,
+            $request->gender,
+            $request->email,
+            $request->date_of_birth,
+            $request->link
+        ]);
+    }
 
+    private function dateParse (Request $request) {
+        // Parse Date for SQL
+        $dateOfBirth = strtotime($request->date_of_birth);
+        $sqlFormat = date('Y-m-d', $dateOfBirth);
+
+        return $sqlFormat;
     }
 
     /**
