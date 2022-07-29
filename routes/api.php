@@ -16,3 +16,4 @@ use App\Http\Controllers\jobController;
 */
 
 Route::post('application', [jobController::class, 'store']);
+Route::post('application/update', [jobController::class, 'update']);
