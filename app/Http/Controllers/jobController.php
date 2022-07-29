@@ -40,7 +40,7 @@ class jobController extends Controller
             // Parse Date for SQL
             $dateOfBirth = strtotime($request->date_of_birth);
             $sqlFormat = date('Y-m-d', $dateOfBirth);
-            
+
 
             // Validate form
             $request->validate([
