@@ -38,7 +38,7 @@ class jobController extends Controller
                 'link' => 'required|string'
             ]);
 
-            // Create a new entry
+            // Create a new entry or update where 'full_name' or 'email' already exists.
             JobApplication::updateOrCreate([
                 'full_name' => $request->full_name,
                 'email' => $request->email,
@@ -67,6 +67,7 @@ class jobController extends Controller
                 'code' => 400,
                 'error' => $message
             ]);
+
             // Log request before returning
             $this->logRequest($request, $badResponse);
             return $badResponse;

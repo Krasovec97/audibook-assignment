@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\jobController;
+use App\Http\Controllers\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,6 @@ use App\Http\Controllers\jobController;
 |
 */
 
-Route::resource('/', jobController::class);
+Route::resource('/', JobController::class);
 
 

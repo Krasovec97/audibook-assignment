@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\jobController;
+use App\Http\Controllers\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,5 @@ use App\Http\Controllers\jobController;
 |
 */
 
-Route::post('application', [jobController::class, 'store']);
-Route::post('application/update', [jobController::class, 'update']);
+Route::post('application', [JobController::class, 'store']);
+Route::post('application/update', [JobController::class, 'update']);
