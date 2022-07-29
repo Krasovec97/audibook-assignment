@@ -53,6 +53,8 @@
 
                 <button id="submitBtn" type="button" class="btn btn-primary btn-lg w-50 px-4 ms-auto">Submit</button>
                 <div class="spinner-grow text-primary" id="loading" role="status"></div>
+                <div class="alert alert-success m-2" id="successAlert" role="alert">Form sent! Thank you!</div>
+                <div class="alert alert-danger m-2" id="errorAlert" role="alert">Form sent! Thank you!</div>
             </form>
 
         </div>
