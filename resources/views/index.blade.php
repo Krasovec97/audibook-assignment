@@ -23,6 +23,7 @@
         <h1 class="display-6 mx-auto fw-bold">Job Application Form</h1>
         <div class="pt-4 d-sm-flex justify-content-sm-center">
             <form id="applicationForm" class="col-8 pb-2">
+                @csrf
                 <div class="text-start">
                     <div class="mb-3">
                         <label for="full_name" class="form-label required">Full Name</label>
