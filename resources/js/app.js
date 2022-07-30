@@ -13,22 +13,28 @@ $('#submitBtn').on('click',function () {
         data: $('#applicationForm').serialize(),
         dataType: "json",
         beforeSend: function () {
+            $('.alert').hide()
             $('#submitBtn').hide()
             $("#loading").show()
             setTimeout(function () {
                 $("#loading").hide()
                 $('#submitBtn').show()
-            }, 1000)
+            }, 500)
         },
         success: function (data) {
             console.log(data);
             if (data.code == 200){
-                $("#errorAlert").hide();
-                $('#successAlert').show();
+                setTimeout(function () {
+                    $('#successAlert').show()
+                    $("#loading").hide()
+                    $('#submitBtn').show()
+                }, 500)
             }else {
-                $('#submitBtn').show();
-                $("#errorAlert").show();
-                $("#errorAlert").text(data.error);
+                setTimeout(function () {
+                    $('#submitBtn').show();
+                    $("#errorAlert").show();
+                    $("#errorAlert").text(data.error);
+                }, 500)
             }
         }
 
