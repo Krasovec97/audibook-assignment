@@ -15,4 +15,6 @@ class JobApplication extends Model
 
     protected $fillable = ['full_name', 'gender', 'email', 'date_of_birth', 'link'];
 
+    protected $connection = 'mysql2';
+
 }
