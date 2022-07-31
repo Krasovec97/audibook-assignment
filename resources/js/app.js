@@ -13,10 +13,12 @@ $('#submitBtn').on('click',function () {
         data: $('#applicationForm').serialize(),
         dataType: "json",
         beforeSend: function () {
+            // Show loading animation
             $('.alert').hide()
             $('#submitBtn').hide()
             $("#loading").show()
             setTimeout(function () {
+                // Show button, hide animation
                 $("#loading").hide()
                 $('#submitBtn').show()
             }, 500)
@@ -25,12 +27,14 @@ $('#submitBtn').on('click',function () {
             console.log(data);
             if (data.code == 200){
                 setTimeout(function () {
+                    // If successful, show success message and button
                     $('#successAlert').show()
                     $("#loading").hide()
                     $('#submitBtn').show()
                 }, 500)
-            }else {
+            } else {
                 setTimeout(function () {
+                    // If failed, show button and alert with response data.
                     $('#submitBtn').show();
                     $("#errorAlert").show();
                     $("#errorAlert").text(data.error);

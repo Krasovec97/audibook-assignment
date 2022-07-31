@@ -43,7 +43,7 @@
                         <input required type="email" name="email" id="email" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label required">Date of birth</label>
+                        <label for="date" class="form-label required">Date of birth</label>
                         <input required type="date" name="date_of_birth" id="date" class="form-control">
                     </div>
                     <div class="mb-3">
