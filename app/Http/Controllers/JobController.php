@@ -40,7 +40,7 @@ class jobController extends Controller
 
             // Create a new entry or update where 'full_name' or 'email' already exists.
             JobApplication::updateOrCreate([
-                'full_name' => $request->full_name,
+                'full_name' => strToLower($request->full_name),
                 'email' => $request->email,
             ], [
                 'gender' => $request->gender,
