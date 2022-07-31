@@ -12,6 +12,15 @@
     color:red;
 }
 
+@media only screen and (max-width: 380px) {
+    .col-5, .col-8, .col-10 {
+        width: 100%;
+    }
+    .display-6 {
+        font-size: 18px !important;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .col-5 {
         width: 80%;

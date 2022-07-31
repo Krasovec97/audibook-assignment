@@ -24,3 +24,6 @@
 [2022-07-31 11:29:35] local.INFO: New request: ["{\"code\":200,\"message\":\"OK\"}","Mitja Krašovec","male","mitjakrasovec1@gmail.com","1997-10-14","https://github.com/Krasovec97/audibook-assignment"] 
 [2022-07-31 11:29:53] local.INFO: New request: ["{\"code\":200,\"message\":\"OK\"}","Mitja KrašoveC","female","mitjakrasovec1@gmail.com","1997-10-14","https://github.com/Krasovec97/audibook-assignment"] 
 [2022-07-31 11:30:05] local.INFO: New request: ["{\"code\":200,\"message\":\"OK\"}","Mitja KrašoveC","male","mitjakrasovec1@gmail.com","1997-10-14","https://github.com/Krasovec97/audibook-assignment"] 
+[2022-07-31 12:03:53] local.INFO: New request: ["{\"code\":200,\"message\":\"OK\"}","test","female","mitja.krasovec@specto.si","2022-07-08","https://github.com/Krasovec97/audibook-assignment"] 
+[2022-07-31 12:45:27] local.INFO: New request: ["{\"code\":200,\"message\":\"OK\"}","Mitja Krašovec","male","mitjakrasovec1@gmail.com","1997-10-14","https://github.com/Krasovec97/audibook-assignment"] 
+[2022-07-31 13:40:12] local.INFO: New request: ["{\"code\":200,\"message\":\"OK\"}","test","male","mitjakrasovec1@gmail.com","2022-07-25","https://github.com/Krasovec97/audibook-assignment"] 

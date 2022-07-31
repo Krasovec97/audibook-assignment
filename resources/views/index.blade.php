@@ -7,10 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script defer src="{{ asset('js/app.js') }}" defer></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#datetimepicker').datetimepicker();
+        });
+    </script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.scss') }}" rel="stylesheet">
+
 
     @vite(['resources/js/app.js'])
 
@@ -18,13 +26,13 @@
 </head>
 <body class="bg-black bg-opacity-10">
 <div class="px-4 py-3 my-5 text-center bg-white col-5 d-flex flex-column m-auto rounded-4">
-    <img class="pt-2 mb-2 justify-content-start" src="{{ asset('img/logo.svg') }}" alt="Site Logo" width="150" height="50">
+    <img class="ms-5 pt-2 mb-2 justify-content-start" src="{{ asset('img/logo.svg') }}" alt="Site Logo" width="150" height="50">
     <div class="position-relative col-10 mx-auto p-3">
         <h1 class="display-6 mx-auto fw-bold">Job Application Form</h1>
         <div class="pt-4 d-sm-flex justify-content-sm-center">
             <form id="applicationForm" class="col-8 pb-2">
                 @csrf
-                <div class="text-start">
+                <div class="text-start form-group">
                     <div class="mb-3">
                         <label for="full_name" class="form-label required">Full Name</label>
                         <input required type="text" name="full_name" class="form-control" id="full_name">
@@ -35,7 +43,6 @@
                             <option selected>Choose...</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
-                            <option value="rather_not_say">I'd rather not say</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -55,7 +62,7 @@
                 <button id="submitBtn" type="button" class="btn btn-primary btn-lg w-50 px-4 ms-auto">Submit</button>
                 <div class="spinner-grow text-primary" id="loading" role="status"></div>
                 <div class="alert alert-success m-2" id="successAlert" role="alert">Form sent! Thank you!</div>
-                <div class="alert alert-danger m-2" id="errorAlert" role="alert">Form sent! Thank you!</div>
+                <div class="alert alert-danger m-2" id="errorAlert" role="alert"></div>
             </form>
 
         </div>

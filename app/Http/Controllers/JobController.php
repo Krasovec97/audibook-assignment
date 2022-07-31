@@ -62,7 +62,7 @@ class jobController extends Controller
         {
             $message = $error->getMessage();
 
-            // Return error message
+            // Return error message / bad response
             $badResponse = response()->json([
                 'code' => 400,
                 'error' => $message
