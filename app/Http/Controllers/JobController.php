@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
 use App\Models\JobApplication;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class jobController extends Controller

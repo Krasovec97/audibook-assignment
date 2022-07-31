@@ -24,7 +24,6 @@ $('#submitBtn').on('click',function () {
             }, 500)
         },
         success: function (data) {
-            console.log(data);
             if (data.code == 200){
                 setTimeout(function () {
                     // If successful, show success message and button
