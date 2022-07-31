@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Scripts -->
-    <script defer src="{{ asset('js/app.js') }}"></script>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.scss') }}" rel="stylesheet">
 
     @vite(['resources/js/app.js'])
+    @vite(['resources/sass/app.scss'])
 
-    <title>Audibook Assignment</title>
+    <title>Audibook</title>
 </head>
 <body class="bg-black bg-opacity-10">
 <img class="ms-5 pt-2 mb-2 justify-content-start" src="{{ asset('img/logo.svg') }}" alt="Site Logo" width="150" height="50">
